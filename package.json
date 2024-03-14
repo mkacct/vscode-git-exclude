@@ -1,0 +1,44 @@
+{
+	"name": "git-exclude",
+	"private": true,
+	"publisher": "mk",
+	"displayName": "Git Exclude",
+	"description": "Adds commands regarding the git exclude file",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.87.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [],
+	"main": "./src/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "git-exclude.openExcludeFile",
+				"category": "Git",
+				"title": "Open Exclude File"
+			},
+			{
+				"command": "git-exclude.exclude",
+				"category": "Git",
+				"title": "Add to Exclude File"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "vscode-test"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.87.0",
+		"@types/mocha": "^10.0.6",
+		"@types/node": "18.x",
+		"eslint": "^8.56.0",
+		"typescript": "^5.3.3",
+		"@vscode/test-cli": "^0.0.6",
+		"@vscode/test-electron": "^2.3.9"
+	}
+}
