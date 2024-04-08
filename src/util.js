@@ -7,14 +7,16 @@ class ExtensionCommandError extends Error {
 	}
 }
 
-async function wrapExtensionCommand(f) {
-	try {
-		return await f();
-	} catch (ex) {
-		if (ex instanceof ExtensionCommandError) {
-			vscode.window.showErrorMessage(ex.message);
-		} else {
-			throw ex;
+function wrapExtensionCommand(func) {
+	return async () => {
+		try {
+			return await func();
+		} catch (ex) {
+			if (ex instanceof ExtensionCommandError) {
+				vscode.window.showErrorMessage(ex.message);
+			} else {
+				throw ex;
+			}
 		}
 	}
 }
