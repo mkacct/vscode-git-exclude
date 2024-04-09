@@ -1,16 +1,16 @@
 const vscode = require("vscode");
 
-class ExtensionCommandError extends Error {
-	constructor(message, options) {
+export class ExtensionCommandError extends Error {
+	constructor(message?: string, options?: ErrorOptions) {
 		super(message, options);
 		this.name = this.constructor.name;
 	}
 }
 
-function wrapExtensionCommand(func) {
+export function wrapExtensionCommand(func: () => Promise<void>): () => Promise<void> {
 	return async () => {
 		try {
-			return await func();
+			await func();
 		} catch (ex) {
 			if (ex instanceof ExtensionCommandError) {
 				vscode.window.showErrorMessage(ex.message);
@@ -20,8 +20,3 @@ function wrapExtensionCommand(func) {
 		}
 	}
 }
-
-module.exports = {
-	ExtensionCommandError,
-	wrapExtensionCommand
-};
