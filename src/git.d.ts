@@ -1,4 +1,5 @@
 // Original source: https://github.com/microsoft/vscode/blob/main/extensions/git/src/api/git.d.ts
+// Original licence: https://github.com/microsoft/vscode/blob/main/LICENSE.txt
 
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
