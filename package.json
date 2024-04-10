@@ -3,14 +3,12 @@
 	"private": true,
 	"publisher": "mk",
 	"displayName": "Git Exclude",
-	"description": "Adds commands regarding the git exclude file",
-	"version": "0.0.1",
-	"engines": {
-		"vscode": "^1.88.0"
-	},
-	"categories": [
-		"Other"
-	],
+	"description": "Quickly open the Git exclude file",
+	"version": "0.1",
+	"license": "MIT",
+	"engines": {"vscode": "^1.88.0"},
+	"categories": ["Other"],
+	"keywords": ["git", "exclude"],
 	"activationEvents": [],
 	"main": "./out/extension.js",
 	"contributes": {
