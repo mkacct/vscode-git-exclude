@@ -1,4 +1,4 @@
-const vscode = require("vscode");
+import * as vscode from "vscode";
 
 export class ExtensionCommandError extends Error {
 	constructor(message?: string, options?: ErrorOptions) {
