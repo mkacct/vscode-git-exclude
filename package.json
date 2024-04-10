@@ -4,7 +4,7 @@
 	"publisher": "mkps",
 	"displayName": "Git Exclude Commands",
 	"description": "Quickly open the Git exclude file",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"license": "MIT",
 	"icon": "res/icon.png",
 	"repository": {
@@ -14,21 +14,10 @@
 	"bugs": {
 		"url": "https://github.com/mkacct/vscode-git-exclude/issues"
 	},
-	"engines": {
-		"vscode": "^1.88.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"keywords": [
-		"git",
-		"exclude",
-		"multi-root ready"
-	],
-	"extensionKind": [
-		"workspace"
-	],
-	"activationEvents": [],
+	"engines": {"vscode": "^1.88.0"},
+	"categories": ["Other"],
+	"keywords": ["git", "exclude", "multi-root ready"],
+	"extensionKind": ["workspace"],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
