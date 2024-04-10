@@ -7,8 +7,8 @@ const EXCLUDE_PATH = [".git", "info", "exclude"];
 
 export function activate(context: vscode.ExtensionContext): void {
 	const openCmd = vscode.commands.registerCommand("git-exclude.openExcludeFile", openCmdFunc);
-	const excludeCmd = vscode.commands.registerCommand("git-exclude.exclude", excludeCmdFunc);
-	context.subscriptions.push(openCmd, excludeCmd);
+	// const excludeCmd = vscode.commands.registerCommand("git-exclude.exclude", excludeCmdFunc);
+	context.subscriptions.push(openCmd);
 }
 
 const openCmdFunc = wrapExtensionCommand(async (): Promise<void> => {
@@ -22,15 +22,12 @@ const openCmdFunc = wrapExtensionCommand(async (): Promise<void> => {
 	} else {
 		repo = repos[0];
 	}
-	const repoUri = repo.rootUri;
-	const excludeFullPath = vscode.Uri.joinPath(repoUri, ...EXCLUDE_PATH);
-	await vscode.window.showTextDocument(excludeFullPath);
+	await vscode.window.showTextDocument(getExcludeFullPath(repo));
 });
 
-const excludeCmdFunc = wrapExtensionCommand(async (): Promise<void> => {
-	// TODO: implement
-	throw new ExtensionCommandError("NYI");
-});
+// const excludeCmdFunc = wrapExtensionCommand(async (): Promise<void> => {
+// 	throw new ExtensionCommandError("NYI");
+// });
 
 async function getGitAPI(): Promise<vscodeGit.API> {
 	const git = vscode.extensions.getExtension<vscodeGit.GitExtension>(GIT_EXTENSION_ID);
@@ -38,8 +35,12 @@ async function getGitAPI(): Promise<vscodeGit.API> {
 	return (await git.activate()).getAPI(1);
 }
 
+function getExcludeFullPath(repo: vscodeGit.Repository): vscode.Uri {
+	return vscode.Uri.joinPath(repo.rootUri, ...EXCLUDE_PATH);
+}
+
 function pickRepo(repos: vscodeGit.Repository[]): Promise<vscodeGit.Repository | null> {
-	return new Promise<vscodeGit.Repository | null>((resolve) => {
+	return new Promise<vscodeGit.Repository | null>((resolve): void => {
 		const quickPick = vscode.window.createQuickPick<RepoQuickPickItem>();
 		quickPick.placeholder = "Choose a repository";
 		quickPick.items = repos.map((repo): RepoQuickPickItem => {

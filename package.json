@@ -18,12 +18,8 @@
 			{
 				"command": "git-exclude.openExcludeFile",
 				"category": "Git",
-				"title": "Open Exclude File"
-			},
-			{
-				"command": "git-exclude.exclude",
-				"category": "Git",
-				"title": "Add to Exclude File"
+				"title": "Open Exclude File",
+				"enablement": "config.git.enabled && !git.missing && gitOpenRepositoryCount != 0"
 			}
 		]
 	},
