@@ -4,7 +4,7 @@
 	"publisher": "mkps",
 	"displayName": "Git Exclude Commands",
 	"description": "Quickly open the Git exclude file",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"license": "MIT",
 	"icon": "res/icon.png",
 	"repository": {
@@ -22,7 +22,8 @@
 	],
 	"keywords": [
 		"git",
-		"exclude"
+		"exclude",
+		"multi-root ready"
 	],
 	"extensionKind": [
 		"workspace"
