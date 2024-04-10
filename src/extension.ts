@@ -6,8 +6,8 @@ const GIT_EXTENSION_ID = "vscode.git";
 const EXCLUDE_PATH = [".git", "info", "exclude"];
 
 export function activate(context: vscode.ExtensionContext): void {
-	const openCmd = vscode.commands.registerCommand("git-exclude.openExcludeFile", openCmdFunc);
-	// const excludeCmd = vscode.commands.registerCommand("git-exclude.exclude", excludeCmdFunc);
+	const openCmd = vscode.commands.registerCommand("git-exclude-commands.openExcludeFile", openCmdFunc);
+	// const excludeCmd = vscode.commands.registerCommand("git-exclude-commands.exclude", excludeCmdFunc);
 	context.subscriptions.push(openCmd);
 }
 
