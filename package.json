@@ -6,6 +6,7 @@
 	"description": "Quickly open the Git exclude file",
 	"version": "0.1.0",
 	"license": "MIT",
+	"icon": "res/icon.png",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/mkacct/vscode-git-exclude.git"
