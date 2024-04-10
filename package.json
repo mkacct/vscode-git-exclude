@@ -17,6 +17,7 @@
 	"engines": {"vscode": "^1.88.0"},
 	"categories": ["Other"],
 	"keywords": ["git", "exclude"],
+	"extensionKind": ["workspace"],
 	"activationEvents": [],
 	"main": "./out/extension.js",
 	"contributes": {
