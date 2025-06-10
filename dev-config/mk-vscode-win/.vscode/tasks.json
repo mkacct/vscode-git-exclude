@@ -1,5 +1,3 @@
-// See https://go.microsoft.com/fwlink/?LinkId=733558
-// for the documentation about the tasks.json format
 {
 	"version": "2.0.0",
 	"problemMatcher": [],
@@ -16,6 +14,18 @@
 			"runOptions": {"runOn": "folderOpen"},
 			"type": "shell",
 			"command": "npm install"
+		},
+		{
+			"label": "vsce package",
+			"group": "build",
+			"dependsOn": [
+				"npm install"
+			],
+			"type": "shell",
+			"command": "vsce package",
+			"presentation": {
+				"reveal": "always",
+			}
 		},
 		{
 			"type": "npm",
