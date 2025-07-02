@@ -3,6 +3,7 @@
         "out": false // set this to true to hide the "out" folder with the compiled JS files
     },
     "material-icon-theme.folders.associations": {
+        "out": "dist",
         "res": "resource",
         "src": "src"
     },
