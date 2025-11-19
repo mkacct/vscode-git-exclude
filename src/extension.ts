@@ -14,7 +14,7 @@ export function activate(context: vscode.ExtensionContext): void {
 const openCmdFunc = wrapExtensionCommand(async (): Promise<void> => {
 	const gitApi = await getGitAPI();
 	const repos = gitApi.repositories;
-	if (repos.length == 0) {throw new ExtensionCommandError("No git repository open");}
+	if (repos.length === 0) {throw new ExtensionCommandError("No git repository open");}
 	let repo;
 	if (repos.length > 1) {
 		repo = await pickRepo(repos);

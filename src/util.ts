@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 
 export class ExtensionCommandError extends Error {
-	constructor(message?: string, options?: ErrorOptions) {
+	public constructor(message?: string, options?: ErrorOptions) {
 		super(message, options);
 		this.name = this.constructor.name;
 	}
@@ -18,5 +18,5 @@ export function wrapExtensionCommand(func: () => Promise<void>): () => Promise<v
 				throw ex;
 			}
 		}
-	}
+	};
 }

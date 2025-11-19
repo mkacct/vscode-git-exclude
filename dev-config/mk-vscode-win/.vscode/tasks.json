@@ -39,6 +39,12 @@
 				"kind": "build",
 				"isDefault": true
 			}
+		},
+		{
+			"label": "npm update",
+			"type": "shell",
+			"command": "npm update",
+			"problemMatcher": []
 		}
 	]
 }
